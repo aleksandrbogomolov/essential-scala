@@ -6,5 +6,5 @@ class Counter(val in: Int) {
 
   def dec(int: Int = 1): Counter = new Counter(in - int)
 
-  def adjust(adder: Adder): Counter = new Counter(adder.add(in))
+  def adjust(adder: Adder): Counter = new Counter(adder(in))
 }
