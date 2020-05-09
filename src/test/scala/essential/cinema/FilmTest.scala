@@ -4,23 +4,20 @@ import essential.UnitSpec
 
 class FilmTest extends UnitSpec {
 
-  val eastwood = new Director("Clint", "Eastwood", 1930)
-  val mcTiernan = new Director("John", "McTiernan", 1951)
-  val nolan = new Director("Christopher", "Nolan", 1970)
-  val someBody = new Director("Just", "Some Body", 1990)
+  val directorTest = new DirectorTest
 
-  val memento = new Film("Memento", 2000, 8.5, nolan)
-  val darkKnight = new Film("Dark Knight", 2008, 9.0, nolan)
-  val inception = new Film("Inception", 2010, 8.8, nolan)
-  val highPlainsDrifter = new Film("High Plains Drifter", 1973, 7.7, eastwood)
-  val outlawJoseyWales = new Film("The Outlaw Josey Wales", 1976, 7.9, eastwood)
-  val unforgiven = new Film("Unforgiven", 1992, 8.3, eastwood)
-  val granTorino = new Film("Gran Torino", 2008, 8.2, eastwood)
-  val invictus = new Film("Invictus", 2009, 7.4, eastwood)
-  val predator = new Film("Predator", 1987, 7.9, mcTiernan)
-  val dieHard = new Film("Die Hard", 1988, 8.3, mcTiernan)
-  val huntForRedOctober = new Film("The Hunt for Red October", 1990, 7.6, mcTiernan)
-  val thomasCrownAffair = new Film("The Thomas Crown Affair", 1999, 6.8, mcTiernan)
+  val memento = new Film("Memento", 2000, 8.5, directorTest.nolan)
+  val darkKnight = new Film("Dark Knight", 2008, 9.0, directorTest.nolan)
+  val inception = new Film("Inception", 2010, 8.8, directorTest.nolan)
+  val highPlainsDrifter = new Film("High Plains Drifter", 1973, 7.7, directorTest.eastwood)
+  val outlawJoseyWales = new Film("The Outlaw Josey Wales", 1976, 7.9, directorTest.eastwood)
+  val unforgiven = new Film("Unforgiven", 1992, 8.3, directorTest.eastwood)
+  val granTorino = new Film("Gran Torino", 2008, 8.2, directorTest.eastwood)
+  val invictus = new Film("Invictus", 2009, 7.4, directorTest.eastwood)
+  val predator = new Film("Predator", 1987, 7.9, directorTest.mcTiernan)
+  val dieHard = new Film("Die Hard", 1988, 8.3, directorTest.mcTiernan)
+  val huntForRedOctober = new Film("The Hunt for Red October", 1990, 7.6, directorTest.mcTiernan)
+  val thomasCrownAffair = new Film("The Thomas Crown Affair", 1999, 6.8, directorTest.mcTiernan)
 
   "A directorAge" should "return the age of the director at the time of release" in {
     assert(memento.directorAge == 30)
@@ -31,11 +28,11 @@ class FilmTest extends UnitSpec {
   }
 
   "An isDirectedBy" should "return true if film directed by given director" in {
-    assert(highPlainsDrifter.isDirectedBy(eastwood))
+    assert(highPlainsDrifter.isDirectedBy(directorTest.eastwood))
   }
 
   it should "return false if film not directed by given director" in {
-    assert(!highPlainsDrifter.isDirectedBy(someBody))
+    assert(!highPlainsDrifter.isDirectedBy(directorTest.someBody))
   }
 
   "A copy" should "return full copy of current film if no new params added" in {
@@ -77,8 +74,8 @@ class FilmTest extends UnitSpec {
   }
 
   it should "return copy of current film with new director param" in {
-    val copyGranTorino = granTorino.copy(director = someBody)
-    assert(copyGranTorino.director == someBody)
+    val copyGranTorino = granTorino.copy(director = directorTest.someBody)
+    assert(copyGranTorino.director == directorTest.someBody)
 
     assert(copyGranTorino.name == granTorino.name)
     assert(copyGranTorino.yearOfRelease == granTorino.yearOfRelease)
