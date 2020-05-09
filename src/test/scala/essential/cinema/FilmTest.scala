@@ -81,4 +81,16 @@ class FilmTest extends UnitSpec {
     assert(copyGranTorino.yearOfRelease == granTorino.yearOfRelease)
     assert(copyGranTorino.imdbRating == granTorino.imdbRating)
   }
+
+  "A highestRating" should "return the highest imdbRating of the two" in {
+    assertResult(9.0) {
+      Film.highestRating(memento, darkKnight)
+    }
+  }
+
+  "An oldestDirectorAtTheTime" should "return the Director who was oldest at the respective time of filming" in {
+    assertResult(directorTest.eastwood) {
+      Film.oldestDirectorAtTheTime(memento, unforgiven)
+    }
+  }
 }
