@@ -6,18 +6,18 @@ class FilmTest extends UnitSpec {
 
   val directorTest = new DirectorTest
 
-  val memento = new Film("Memento", 2000, 8.5, directorTest.nolan)
-  val darkKnight = new Film("Dark Knight", 2008, 9.0, directorTest.nolan)
-  val inception = new Film("Inception", 2010, 8.8, directorTest.nolan)
-  val highPlainsDrifter = new Film("High Plains Drifter", 1973, 7.7, directorTest.eastwood)
-  val outlawJoseyWales = new Film("The Outlaw Josey Wales", 1976, 7.9, directorTest.eastwood)
-  val unforgiven = new Film("Unforgiven", 1992, 8.3, directorTest.eastwood)
-  val granTorino = new Film("Gran Torino", 2008, 8.2, directorTest.eastwood)
-  val invictus = new Film("Invictus", 2009, 7.4, directorTest.eastwood)
-  val predator = new Film("Predator", 1987, 7.9, directorTest.mcTiernan)
-  val dieHard = new Film("Die Hard", 1988, 8.3, directorTest.mcTiernan)
-  val huntForRedOctober = new Film("The Hunt for Red October", 1990, 7.6, directorTest.mcTiernan)
-  val thomasCrownAffair = new Film("The Thomas Crown Affair", 1999, 6.8, directorTest.mcTiernan)
+  val memento = Film("Memento", 2000, 8.5, directorTest.nolan)
+  val darkKnight = Film("Dark Knight", 2008, 9.0, directorTest.nolan)
+  val inception = Film("Inception", 2010, 8.8, directorTest.nolan)
+  val highPlainsDrifter = Film("High Plains Drifter", 1973, 7.7, directorTest.eastwood)
+  val outlawJoseyWales = Film("The Outlaw Josey Wales", 1976, 7.9, directorTest.eastwood)
+  val unforgiven = Film("Unforgiven", 1992, 8.3, directorTest.eastwood)
+  val granTorino = Film("Gran Torino", 2008, 8.2, directorTest.eastwood)
+  val invictus = Film("Invictus", 2009, 7.4, directorTest.eastwood)
+  val predator = Film("Predator", 1987, 7.9, directorTest.mcTiernan)
+  val dieHard = Film("Die Hard", 1988, 8.3, directorTest.mcTiernan)
+  val huntForRedOctober = Film("The Hunt for Red October", 1990, 7.6, directorTest.mcTiernan)
+  val thomasCrownAffair = Film("The Thomas Crown Affair", 1999, 6.8, directorTest.mcTiernan)
 
   "A directorAge" should "return the age of the director at the time of release" in {
     assert(memento.directorAge == 30)

@@ -6,7 +6,7 @@ class CounterTest extends UnitSpec {
 
   def fixture =
     new {
-      val counter = new Counter(10)
+      val counter = Counter(10)
     }
 
   "The method inc" should "return new Counter with incremented value" in {
